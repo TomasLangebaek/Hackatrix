@@ -1,0 +1,20 @@
+"labelAnnotations": Array [
+ Object {
+   "description": "bag",
+   "mid": "/m/0838f",
+   "score": 0.97380537,
+   "topicality": 0.97380537,
+ },
+ Object {
+   "description": "plastico",
+   "mid": "/m/0j2kx",
+   "score": 0.97099465,
+   "topicality": 0.97099465,
+ },
+ Object {
+   "description": "cup",
+   "mid": "/m/05h0n",
+   "score": 0.9594912,
+   "topicality": 0.9594912,
+ }
+]

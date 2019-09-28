@@ -18,11 +18,19 @@ public class Verificacion {
 	private LinkedList<String> descriptionImage; 
 	private Hashtable<String, String> tabla;
 
+	
+	public Verificacion() {
+		Carga();
+		tabla = new Hashtable<>();
+		descriptionImage= new LinkedList<String>();
+		cargarTabla();
+	}
+	
 	public void Carga() {
 		JSONParser parser = new JSONParser();
 		
 		
-		 try (Reader reader = new FileReader("c:\\projects\\test.json")) {
+		 try (Reader reader = new FileReader("././data/test.json")) {
 
 	         JSONArray jsonArray = (JSONArray) parser.parse(reader);
 	         System.out.println(jsonArray);
@@ -46,13 +54,6 @@ public class Verificacion {
 	     }
 
 	 }
-	public Verificacion() {
-		Carga();
-		tabla = new Hashtable<>();
-		descriptionImage= new LinkedList<String>();
-		cargarTabla();
-	}
-	
 	
 	public boolean verificarPalabra(String palabra){
 		
@@ -83,16 +84,22 @@ public class Verificacion {
 	}
 	
 	public static void main(String[] args) {
-		String[] arreglo = {"plastico", "naranjas","papel", "vidrio", "carton"};
 		Verificacion v = new Verificacion();
-		for(int i = 0; i < arreglo.length; i++)
-		{
-			String siONo = " no esta ";
-			if(v.verificarPalabra(arreglo[i]))
-				siONo = " esta ";
-			System.out.println(arreglo[i] + siONo + "en la tabla!");
-		}
+		System.out.println(v.verificarTodo());
 	}
+	
+	public boolean verificarTodo(){
+		
+		boolean esta = false;
+		
+		for(int i = 0; i < descriptionImage.size() && !esta; i++)
+		{	
+			if(verificarPalabra(descriptionImage.get(i)))
+				esta = true;
+		}
+		return esta;
+	}
+	
 	
 
 }
