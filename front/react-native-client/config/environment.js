@@ -1,11 +1,11 @@
 var environments = {
   staging: {
-    FIREBASE_API_KEY: 'AIzaSyCAMlnveZiOhX4KuolfVq_0DRFOvOPKGQw',
-    FIREBASE_AUTH_DOMAIN: 'trash-recognition-1b478.firebaseapp.com',
-    FIREBASE_DATABASE_URL: 'https://trash-recognition-1b478.firebaseio.com',
-    FIREBASE_PROJECT_ID: 'trash-recognition-1b478',
-    FIREBASE_STORAGE_BUCKET: 'trash-recognition-1b478.appspot.com',
-    FIREBASE_MESSAGING_SENDER_ID: '798764358331',
+    FIREBASE_API_KEY: 'AIzaSyCMJsqEEoskaV_4HOTvJotIZZXc5R1aX7g',
+    FIREBASE_AUTH_DOMAIN: 'trash-recognition-254315.firebaseapp.com',
+    FIREBASE_DATABASE_URL: 'https://trash-recognition-254315.firebaseio.com',
+    FIREBASE_PROJECT_ID: 'trash-recognition-254315',
+    FIREBASE_STORAGE_BUCKET: 'trash-recognition-254315.appspot.com',
+    FIREBASE_MESSAGING_SENDER_ID: '309626678940',
     GOOGLE_CLOUD_VISION_API_KEY: 'AIzaSyBRI91JJG4v4lT0AxzHqLVn7G7LNCrV_J8'
   },
   production: {

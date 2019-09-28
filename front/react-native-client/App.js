@@ -198,7 +198,7 @@ export default class App extends React.Component {
       }
     } catch (e) {
       console.log(e);
-      alert('Upload failed, sorry :(');
+      alert('Error al subir la imagen a Firebase :/');
     } finally {
       this.setState({ uploading: false });
     }
