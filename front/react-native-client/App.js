@@ -11,7 +11,8 @@ import {
   ScrollView,
   View
 } from 'react-native';
-import { ImagePicker, Permissions } from 'expo';
+import * as ImagePicker from 'expo-image-picker';
+import * as Permissions from 'expo-permissions';
 import uuid from 'uuid';
 import Environment from './config/environment';
 import firebase from './config/firebase';

@@ -1,3 +1,4 @@
+import Environment from './environment';
 import * as firebase from 'firebase';
 
 firebase.initializeApp({
