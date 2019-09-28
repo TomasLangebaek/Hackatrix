@@ -17,7 +17,10 @@ import uuid from 'uuid';
 import Environment from './config/environment';
 import firebase from './config/firebase';
 
+
+var words=['Cup','cup'];
 export default class App extends React.Component {
+
   state = {
     image: null,
     uploading: false,
@@ -58,6 +61,7 @@ export default class App extends React.Component {
                 keyExtractor={this._keyExtractor}
                 renderItem={({ item }) => <Text>Item: {item.description}</Text>}
               />
+              
             )}
             {this._maybeRenderImage()}
             {this._maybeRenderUploadingOverlay()}
@@ -65,6 +69,7 @@ export default class App extends React.Component {
         </ScrollView>
       </View>
     );
+    buscar(item.description);
   }
 
   organize = array => {
@@ -310,3 +315,15 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   }
 });
+
+function buscar(word){
+  for ( i=0; i<words.size; i++)
+  {
+    if(words[i]==word){
+      alert('Es reciclable');
+    }
+    else {
+      alert('No es reciclable')
+    }
+  }
+}
