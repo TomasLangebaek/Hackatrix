@@ -20,9 +20,9 @@ public class Verificacion {
 
 	
 	public Verificacion() {
+		descriptionImage= new LinkedList<String>();
 		Carga();
 		tabla = new Hashtable<>();
-		descriptionImage= new LinkedList<String>();
 		cargarTabla();
 	}
 	
@@ -33,14 +33,14 @@ public class Verificacion {
 		 try (Reader reader = new FileReader("././data/test.json")) {
 
 	         JSONArray jsonArray = (JSONArray) parser.parse(reader);
-	         System.out.println(jsonArray);
+//	         System.out.println(jsonArray);
 	        
 	         int i=0;
 	         while(i<jsonArray.size()) {
 	         JSONObject ob = (JSONObject) jsonArray.get(i);
 	         String description=(String) ob.get("description");
 	         descriptionImage.add(description);
-	         System.out.println(description);
+//	         System.out.println(description);
 	         i++;
 	         }
 
