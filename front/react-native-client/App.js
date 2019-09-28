@@ -40,12 +40,13 @@ export default class App extends React.Component {
         >
           <View style={styles.getStartedContainer}>
             {image ? null : (
-              <Text style={styles.getStartedText}>Google Cloud Vision</Text>
+              <Text style={styles.getStartedText}>Trash Recognition</Text>
             )}
           </View>
 
           <View style={styles.helpContainer}>
             <Button
+              style={styles.buttonPicker}
               onPress={this._pickImage}
               title="Usar una imagen de galería"
             />
@@ -56,7 +57,7 @@ export default class App extends React.Component {
                 data={this.state.googleResponse.responses[0].labelAnnotations}
                 extraData={this.state}
                 keyExtractor={this._keyExtractor}
-                renderItem={({ item }) => <Text>Item: {item.description}</Text>}
+                renderItem={({ item }) => <Text>Esto es: {item.description}</Text>}
               />
             )}
             {this._maybeRenderImage()}
@@ -290,7 +291,7 @@ const styles = StyleSheet.create({
     textAlign: 'center'
   },
   contentContainer: {
-    paddingTop: 30
+    paddingTop: 100
   },
 
   getStartedContainer: {
@@ -306,7 +307,7 @@ const styles = StyleSheet.create({
   },
 
   helpContainer: {
-    marginTop: 15,
+    marginTop: 50,
     alignItems: 'center'
   }
 });
