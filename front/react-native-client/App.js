@@ -18,7 +18,7 @@ import Environment from './config/environment';
 import firebase from './config/firebase';
 
 
-var words=['Cup','cup'];
+var words = ['Cup', 'cup'];
 export default class App extends React.Component {
 
   state = {
@@ -41,6 +41,11 @@ export default class App extends React.Component {
           style={styles.container}
           contentContainerStyle={styles.contentContainer}
         >
+          {/* <Image
+            style={{
+              width: 100, height: 100
+            }}
+            source={require('./assets/trashRecognitionLogo.png')} /> */}
           <View style={styles.getStartedContainer}>
             {image ? null : (
               <Text style={styles.getStartedText}>Trash Recognition</Text>
@@ -61,17 +66,25 @@ export default class App extends React.Component {
                 extraData={this.state}
                 keyExtractor={this._keyExtractor}
                 renderItem={({ item }) => <Text>Esto es: {item.description}</Text>}
+
               />
-              
+
             )}
+
+
+
+
             {this._maybeRenderImage()}
             {this._maybeRenderUploadingOverlay()}
+
+
           </View>
         </ScrollView>
-      </View>
+
+      </View >
     );
-    buscar(item.description);
-    console.log("La palabra que mande fue "+ item.description);
+
+    console.log("La palabra que mandé fue" + item.description);
   }
 
   organize = array => {
@@ -318,14 +331,13 @@ const styles = StyleSheet.create({
   }
 });
 
-function buscar(word){
-  for ( i=0; i<words.size; i++)
-  {
-    if(words[i]==word){
+function buscar(word) {
+  for (i = 0; i < words.lenght(); i++) {
+    if (words[i] == word) {
       alert('Es reciclable');
     }
     else {
-      alert('No es reciclable')
+      alert('No es reciclable');
     }
   }
 }
