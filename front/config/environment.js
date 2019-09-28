@@ -6,7 +6,7 @@ var environments = {
     FIREBASE_PROJECT_ID: 'trash-recognition-1b478',
     FIREBASE_STORAGE_BUCKET: 'trash-recognition-1b478.appspot.com',
     FIREBASE_MESSAGING_SENDER_ID: '798764358331',
-    GOOGLE_CLOUD_VISION_API_KEY: 'XXXX'
+    GOOGLE_CLOUD_VISION_API_KEY: 'AIzaSyBRI91JJG4v4lT0AxzHqLVn7G7LNCrV_J8'
   },
   production: {
     // Warning: This file still gets included in your native binary and is not a secure way to store secrets if you build for the app stores. Details: https://github.com/expo/expo/issues/83
