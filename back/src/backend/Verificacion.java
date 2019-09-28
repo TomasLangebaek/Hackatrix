@@ -24,7 +24,7 @@ public class Verificacion {
 	
 	public void cargarTabla(){
 		try{
-			File archivo = new File("./data/vocabulary.txt");
+			File archivo = new File("././data/vocabulary");
 			FileReader lector = new FileReader(archivo);
 			BufferedReader reader = new BufferedReader(lector);
 			
@@ -44,8 +44,15 @@ public class Verificacion {
 	}
 	
 	public static void main(String[] args) {
+		String[] arreglo = {"plastico", "naranjas","papel", "vidrio", "carton"};
 		Verificacion v = new Verificacion();
-		v.
+		for(int i = 0; i < arreglo.length; i++)
+		{
+			String siONo = " no esta ";
+			if(v.verificarPalabra(arreglo[i]))
+				siONo = " esta ";
+			System.out.println(arreglo[i] + siONo + "en la tabla!");
+		}
 	}
 	
 
