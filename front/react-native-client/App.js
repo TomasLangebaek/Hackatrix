@@ -43,12 +43,13 @@ export default class App extends React.Component {
         >
           <View style={styles.getStartedContainer}>
             {image ? null : (
-              <Text style={styles.getStartedText}>Google Cloud Vision</Text>
+              <Text style={styles.getStartedText}>Trash Recognition</Text>
             )}
           </View>
 
           <View style={styles.helpContainer}>
             <Button
+              style={styles.buttonPicker}
               onPress={this._pickImage}
               title="Usar una imagen de galería"
             />
@@ -59,7 +60,7 @@ export default class App extends React.Component {
                 data={this.state.googleResponse.responses[0].labelAnnotations}
                 extraData={this.state}
                 keyExtractor={this._keyExtractor}
-                renderItem={({ item }) => <Text>Item: {item.description}</Text>}
+                renderItem={({ item }) => <Text>Esto es: {item.description}</Text>}
               />
               
             )}
@@ -179,7 +180,7 @@ export default class App extends React.Component {
   _takePhoto = async () => {
     let pickerResult = await ImagePicker.launchCameraAsync({
       allowsEditing: true,
-      aspect: [4, 3]
+      aspect: [3, 3]
     });
 
     this._handleImagePicked(pickerResult);
@@ -188,7 +189,7 @@ export default class App extends React.Component {
   _pickImage = async () => {
     let pickerResult = await ImagePicker.launchImageLibraryAsync({
       allowsEditing: true,
-      aspect: [4, 3]
+      aspect: [3, 3]
     });
 
     this._handleImagePicked(pickerResult);
@@ -296,7 +297,7 @@ const styles = StyleSheet.create({
     textAlign: 'center'
   },
   contentContainer: {
-    paddingTop: 30
+    paddingTop: 100
   },
 
   getStartedContainer: {
@@ -312,7 +313,7 @@ const styles = StyleSheet.create({
   },
 
   helpContainer: {
-    marginTop: 15,
+    marginTop: 50,
     alignItems: 'center'
   }
 });
