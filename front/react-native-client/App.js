@@ -47,10 +47,10 @@ export default class App extends React.Component {
           <View style={styles.helpContainer}>
             <Button
               onPress={this._pickImage}
-              title="Pick an image from camera roll"
+              title="Usar una imagen de galería"
             />
 
-            <Button onPress={this._takePhoto} title="Take a photo" />
+            <Button onPress={this._takePhoto} title="Tomar foto" />
             {this.state.googleResponse && (
               <FlatList
                 data={this.state.googleResponse.responses[0].labelAnnotations}
@@ -114,7 +114,7 @@ export default class App extends React.Component {
         <Button
           style={{ marginBottom: 10 }}
           onPress={() => this.submitToGoogle()}
-          title="Analyze!"
+          title="Analizar"
         />
 
         <View
