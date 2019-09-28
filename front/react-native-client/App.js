@@ -70,6 +70,7 @@ export default class App extends React.Component {
       </View>
     );
     buscar(item.description);
+    console.log("La palabra que mande fue "+ item.description);
   }
 
   organize = array => {
