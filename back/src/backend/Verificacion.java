@@ -16,31 +16,27 @@ import org.json.simple.parser.ParseException;
 public class Verificacion {
 	
 	private LinkedList<String> descriptionImage; 
-	private Hashtable<String, String> tabla;
-
 	
-	public Verificacion() {
+	public Verificacion(String pRuta) {
 		descriptionImage= new LinkedList<String>();
-		Carga();
-		tabla = new Hashtable<>();
-		cargarTabla();
+		Carga(pRuta);
 	}
 	
-	public void Carga() {
+	public void Carga(String pRuta) {
 		JSONParser parser = new JSONParser();
 		
 		
-		 try (Reader reader = new FileReader("././data/test.json")) {
+		 try (Reader reader = new FileReader(pRuta)) {
 
 	         JSONArray jsonArray = (JSONArray) parser.parse(reader);
-//	         System.out.println(jsonArray);
+
 	        
 	         int i=0;
 	         while(i<jsonArray.size()) {
 	         JSONObject ob = (JSONObject) jsonArray.get(i);
 	         String description=(String) ob.get("description");
 	         descriptionImage.add(description);
-//	         System.out.println(description);
+
 	         i++;
 	         }
 
@@ -55,46 +51,20 @@ public class Verificacion {
 
 	 }
 	
-	public boolean verificarPalabra(String palabra){
+	public boolean verificarPalabra(String palabra, Hashtable<String, String> tabla){
 		
-		boolean encontro = tabla.contains(palabra);		
+		boolean encontro = tabla.containsKey(palabra);	
 		
 		return encontro;
 	}
 	
-	public void cargarTabla(){
-		try{
-			File archivo = new File("././data/vocabulary");
-			FileReader lector = new FileReader(archivo);
-			BufferedReader reader = new BufferedReader(lector);
-			
-			String word = reader.readLine();
-			while(word != null)
-			{
-				tabla.put(word, word);
-				word = reader.readLine();
-			}
-			reader.close();
-		}
-		catch(Exception e)
-		{
-			e.printStackTrace();
-		}
-		
-	}
-	
-	public static void main(String[] args) {
-		Verificacion v = new Verificacion();
-		System.out.println(v.verificarTodo());
-	}
-	
-	public boolean verificarTodo(){
+	public boolean verificarTodo(Hashtable<String, String> tabla){
 		
 		boolean esta = false;
 		
 		for(int i = 0; i < descriptionImage.size() && !esta; i++)
 		{	
-			if(verificarPalabra(descriptionImage.get(i)))
+			if(verificarPalabra(descriptionImage.get(i), tabla))
 				esta = true;
 		}
 		return esta;
